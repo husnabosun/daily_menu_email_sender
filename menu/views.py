@@ -7,8 +7,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 
 
-def process_excel_data(file):
-    df = pd.read_excel(file)
+def process_excel_data():
+    file_path = 'C:/Users/bosun.HšSNABOSUN/Downloads/Haziran Ayı Akşam Yemeği Menüsü.xlsx'
+    df = pd.read_excel(file_path)
 
     for index, row in df.iterrows():
         df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
